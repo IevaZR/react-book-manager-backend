@@ -6,7 +6,7 @@ import userRoute from "./routes/userRoute.js";
 import emailRoute from "./routes/emailRoute.js";
 
 const app = express();
-const port = 3009;
+const port = process.env.PORT || 3009;
 
 app.use(express.json());
 app.use(cors());
