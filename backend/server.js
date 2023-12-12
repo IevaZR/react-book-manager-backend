@@ -9,14 +9,15 @@ const app = express();
 const port = process.env.PORT || 3009;
 
 app.use(express.json());
-const corsOptions = {
-  origin: "https://react-book-manager-frontend-ievazrs-projects.vercel.app",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: [
+      "https://react-book-manager-frontend-ievazrs-projects.vercel.app/",
+    ],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  })
+);
 
 dotenv.config();
 
